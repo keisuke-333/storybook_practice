@@ -1,13 +1,23 @@
-import { Meta } from '@storybook/react'
-import { Button } from './Button'
+import { Meta, Story } from '@storybook/react'
 
-const meta: Meta = {
+import { Button, Props } from './Button'
+
+export default {
   title: 'Practice/Button',
   component: Button,
-}
-export default meta
+  argTypes: {
+    children: {
+      defaultValue: 'CLICK ME Primary',
+    },
+  },
+} as Meta
 
-export const Default = () => <Button variant="primary">CLICK ME Default</Button>
-export const Secondary = () => (
-  <Button variant="secondary">CLICK ME Second</Button>
-)
+const Template: Story<Props> = (args) => <Button {...args} />
+
+export const Default = Template.bind({})
+export const Secondary = Template.bind({})
+
+Secondary.args = {
+  variant: 'secondary',
+  children: 'CLICK ME Secondary',
+}
