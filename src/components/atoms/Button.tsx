@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 
-type Props = {
+export type Props = {
   children: ReactNode
   variant: 'primary' | 'secondary'
 }
