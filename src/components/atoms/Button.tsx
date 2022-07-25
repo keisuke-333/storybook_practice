@@ -5,7 +5,7 @@ export type Props = {
   variant: 'primary' | 'secondary'
 }
 
-export const Button: FC<Props> = ({ children, variant }) => {
+export const Button: FC<Props> = ({ children, variant = 'primary' }) => {
   return (
     <button
       className={`cursor-pointer rounded-full py-2 px-4 font-bold text-white transition-colors ${
