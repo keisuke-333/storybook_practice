@@ -1,11 +1,16 @@
 import { FC, ReactNode } from 'react'
 
 export type Props = {
+  /** Provide a text for the button*/
   children: ReactNode
+
+  /** Which variant look would you like use */
   variant: 'primary' | 'secondary'
+
   onClick?: () => void
 }
 
+/** This is Button component. */
 export const Button: FC<Props> = ({
   children,
   variant = 'primary',
