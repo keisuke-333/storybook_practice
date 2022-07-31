@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 
-export type Props = {
+type Props = {
   /** Provide a text for the button*/
   children: ReactNode
 

@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { Button, Props } from './Button'
+import { Button } from './Button'
 
 export default {
   title: 'Practice/Button',
@@ -9,18 +9,18 @@ export default {
   argTypes: {
     onClick: { action: 'clicked' },
     children: {
-      defaultValue: 'CLICK ME Primary',
+      defaultValue: 'Primary',
     },
   },
-} as Meta
+} as ComponentMeta<typeof Button>
 
-const Template: Story<Props> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Default = Template.bind({})
-export const Secondary = Template.bind({})
 
+export const Secondary = Template.bind({})
 Secondary.args = {
   variant: 'secondary',
-  children: 'CLICK ME Secondary',
+  children: 'Secondary',
   onClick: action('secondary click'),
 }
